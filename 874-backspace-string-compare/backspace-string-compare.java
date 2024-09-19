@@ -20,6 +20,6 @@ class Solution {
         while(!st.isEmpty()){
             str.append(st.pop());
         }
-        return str.toString();
+        return str.reverse().toString();
     }
 }

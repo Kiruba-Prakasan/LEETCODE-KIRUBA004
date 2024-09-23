@@ -1,28 +1,16 @@
-import java.util.Random;
-
 class Solution {
-
-    private int[] data;
-    private Random r;
-
+    private Random rmd;
+    private int[] nums;
     public Solution(int[] nums) {
-        this.data = nums;
-        this.r = new Random();
+        this.rmd = new Random();
+        this.nums = nums;
     }
-
     public int pick(int target) {
-        int count = 0;
-        int result = -1;
-        
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == target) {
-                count++;
-                if (r.nextInt(count) == 0) {
-                    result = i;
-                }
+        while (true) {
+            int index = rmd.nextInt(nums.length);
+            if (nums[index] == target) {
+                return index;
             }
         }
-        
-        return result;
     }
 }

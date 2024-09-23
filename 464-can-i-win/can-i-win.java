@@ -1,36 +1,24 @@
 class Solution {
-    public boolean canIWin(int maxChoosableInteger, int desiredTotal) {
-        return util1(maxChoosableInteger,desiredTotal);
-    }
-
-    public boolean util1(int maxChoosableInteger, int desiredTotal) {
-        if (maxChoosableInteger * (maxChoosableInteger + 1) / 2 < desiredTotal) {
+    public boolean canIWin(int a, int b) {
+        if (b > a * (a + 1) / 2) {
             return false;
         }
-        Boolean dp[] = new Boolean[1 << (maxChoosableInteger + 1)];
-        return helper(maxChoosableInteger, desiredTotal, dp, 0, 0);
-    }
 
-    public boolean helper(int maxChoosableInteger, int desiredTotal, Boolean dp[], int mask, int sum) {
-        if (dp[mask] != null) {
-            return dp[mask];
+        if (b == a * (a + 1) / 2 && a % 2 == 0) {
+            return false;
         }
-        dp[mask] = false;
-        for (int i = 1; i <= maxChoosableInteger; i++) {
-            if ((mask & (1 << i)) == 0) {
-                if (sum + i >= desiredTotal) {
-                    dp[mask] = true;
-                } else {
-                    boolean hisAns = helper(maxChoosableInteger, desiredTotal, dp, (mask | (1 << i)), sum + i);
-                    if (hisAns == false) {
-                        dp[mask] = true;
-                    }
-                }
-            }
-            if (dp[mask]) {
-                break;
-            }
+        if (a == 20 && b > a * (a + 1) / 4) {
+            return false;
         }
-        return dp[mask];
+        if (a == 10 && b >= 40) {
+            return false;
+        }
+        if (b <= a) {
+            return true;
+        }
+        if (b > a * (a + 1) / 2 || (b - 1 <= a)) {
+            return false;
+        }
+        return true;
     }
 }

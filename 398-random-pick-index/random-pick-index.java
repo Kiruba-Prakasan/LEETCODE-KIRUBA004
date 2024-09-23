@@ -1,25 +1,28 @@
+import java.util.Random;
+
 class Solution {
-    int[] data;
-    Random r = new Random();
+
+    private int[] data;
+    private Random r;
+
     public Solution(int[] nums) {
-         data = nums;
+        this.data = nums;
+        this.r = new Random();
     }
-    
+
     public int pick(int target) {
-         int count = 0; int res = -1;
-        ArrayList<Integer> al = new ArrayList<>();
-        for(int i=0; i< data.length; i++){
-            if(data[i] != target) continue;
-            count++;
-            al.add(i);
+        int count = 0;
+        int result = -1;
+        
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] == target) {
+                count++;
+                if (r.nextInt(count) == 0) {
+                    result = i;
+                }
+            }
         }
-        int k = r.nextInt(count);
-        return al.get(k);
+        
+        return result;
     }
 }
-
-/**
- * Your Solution object will be instantiated and called as such:
- * Solution obj = new Solution(nums);
- * int param_1 = obj.pick(target);
- */

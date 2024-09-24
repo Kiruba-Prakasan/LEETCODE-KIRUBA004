@@ -8,10 +8,10 @@ class Solution {
                 continue;
             }
 
-            String left = longestNiceSubstring(s.substring(0, i));
-            String right = longestNiceSubstring(s.substring(i + 1));
+            String l = longestNiceSubstring(s.substring(0, i));
+            String r = longestNiceSubstring(s.substring(i + 1));
 
-            return left.length() >= right.length() ? left : right;
+            return l.length() >= r.length() ? l : r;
         }
         return s;
     }

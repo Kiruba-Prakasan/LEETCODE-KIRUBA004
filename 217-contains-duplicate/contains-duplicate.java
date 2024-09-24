@@ -1,6 +1,6 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        /* using HashMap 
+        /* using HashMap*/
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int num : nums){
             if(map.containsKey(num)){
@@ -16,8 +16,8 @@ class Solution {
             }
         }
         return false;
-        */
         //Using HashSet
+        /*
         HashSet<Integer> set = new HashSet<>();
         for(int num :  nums){
             if(set.contains(num)){
@@ -26,5 +26,6 @@ class Solution {
             set.add(num);
         }
         return false;
+        */
     }
 }

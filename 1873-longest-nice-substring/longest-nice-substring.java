@@ -1,29 +1,18 @@
 class Solution {
     public String longestNiceSubstring(String s) {
         if (s.length() < 2) return "";
-        String str="";
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = i + 1; j <= s.length(); j++) {
-                String subStr = s.substring(i, j);
-                if (check(subStr)) {
-                    if (subStr.length() > str.length()) {
-                        str = subStr;
-                    }
-                }
-            }
-        }
-        return str;
-    }
 
-    private boolean check(String subStr) {
-        for (char c : subStr.toCharArray()) {
-            if (Character.isLowerCase(c) && !subStr.contains(Character.toUpperCase(c) + "")) {
-                return false;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (s.contains(Character.toLowerCase(c) + "") && s.contains(Character.toUpperCase(c) + "")) {
+                continue;
             }
-            if (Character.isUpperCase(c) && !subStr.contains(Character.toLowerCase(c) + "")) {
-                return false;
-            }
+
+            String left = longestNiceSubstring(s.substring(0, i));
+            String right = longestNiceSubstring(s.substring(i + 1));
+
+            return left.length() >= right.length() ? left : right;
         }
-        return true;
+        return s;
     }
 }

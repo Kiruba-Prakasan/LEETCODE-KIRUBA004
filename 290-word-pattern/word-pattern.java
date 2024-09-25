@@ -10,7 +10,10 @@ class Solution {
         for(int i=0;i<words.length;i++){
             char ch = p.charAt(i);
             String w = words[i];
-            if(pmap.containsKey(ch)&&!pmap.get(ch).equals(w)||smap.containsKey(w)&&!smap.get(w).equals(ch)){
+            if(pmap.containsKey(ch)&&!pmap.get(ch).equals(w)){
+                return false;
+            }
+            if(smap.containsKey(w)&&!smap.get(w).equals(ch)){
                 return false;
             }
             pmap.put(ch,w);

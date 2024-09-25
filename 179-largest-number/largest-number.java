@@ -6,8 +6,9 @@ class Solution {
             arr[i] = String.valueOf(nums[i]);
         }
         // Comaparator
-        /* Arrays.sort(arr,(a,b)->(b+a).compareTo(a+b)); */
-        // Using BubbleSort
+         Arrays.sort(arr,(a,b)->(b+a).compareTo(a+b));
+        // Using BubbleSort (Brute Force Approach)
+        /*
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
                 if (swap(arr[i], arr[j])) {
@@ -17,6 +18,7 @@ class Solution {
                 }
             }
         }
+        */
         if (arr[0].equals("0")) {
             return "0";
         }
@@ -25,7 +27,7 @@ class Solution {
         }
         return lnum.toString();
     }
-
+    /*
     private static boolean swap(String a, String b) {
         String ab = a + b;
         String ba = b + a;
@@ -39,4 +41,5 @@ class Solution {
         }
         return false;
     }
+    */
 }

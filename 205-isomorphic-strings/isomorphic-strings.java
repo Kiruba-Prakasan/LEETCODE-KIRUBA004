@@ -1,7 +1,6 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        //BruteForce Approach
-        /*
+        //Frequency approach
         int[] sf = new int[200];
         int[] tf = new int[200];
         if(s.length()!=t.length()){
@@ -15,7 +14,7 @@ class Solution {
             tf[t.charAt(i)]=i+1;
         }
         return true;
-        */
+        /*
         //Using HashMap
         HashMap<Character,Character> smap = new HashMap<>();
         HashMap<Character,Character> tmap = new HashMap<>();
@@ -33,5 +32,6 @@ class Solution {
             tmap.put(ch2,ch1);
         }
         return true;
+        */
     }
 }

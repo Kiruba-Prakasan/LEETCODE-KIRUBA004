@@ -1,17 +1,17 @@
 class Solution {
     public List<String> fizzBuzz(int n) {
-        List<String> answer = new ArrayList<String>();
+        List<String> ans = new ArrayList<String>();
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
-                answer.add("FizzBuzz");
+                ans.add("FizzBuzz");
             } else if (i % 3 == 0) {
-                answer.add("Fizz");
+                ans.add("Fizz");
             } else if (i % 5 == 0) {
-                answer.add("Buzz");
+                ans.add("Buzz");
             } else {
-                answer.add(Integer.toString(i));
+                ans.add(Integer.toString(i));
             }
         }
-        return answer;
+        return ans;
     }
 }

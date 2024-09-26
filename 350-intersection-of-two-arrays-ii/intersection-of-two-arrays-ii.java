@@ -1,6 +1,7 @@
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
-
+        //O(nlogn) TC
+        //O(1) SC
         Arrays.sort(nums1);
         Arrays.sort(nums2);
         //List<Integer> res = new ArrayList<>();

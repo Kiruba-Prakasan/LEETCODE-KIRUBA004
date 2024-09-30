@@ -1,6 +1,5 @@
 class Solution {
     public int findDuplicate(int[] nums) {
-        /*
         int i=0;
         while(i<nums.length)
         {
@@ -21,9 +20,7 @@ class Solution {
                 i++;
             }
         }
-
-        return -1;
-        */
+        /* Using HashMap
         HashMap<Integer,Integer> map = new HashMap<>();
         for(int num : nums){
             if(map.containsKey(num)){
@@ -31,15 +28,13 @@ class Solution {
             }
             map.put(num,1);
         }
+        */
         return -1;
     }
-
-    /*
     private void swap(int[] nums,int i,int j)
     {
         int temp=nums[j];
         nums[j]=nums[i];
         nums[i]=temp;
     }
-    */
 }

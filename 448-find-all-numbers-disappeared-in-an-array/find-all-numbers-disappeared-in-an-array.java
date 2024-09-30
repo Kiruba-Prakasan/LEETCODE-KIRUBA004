@@ -26,6 +26,7 @@ class Solution {
         return res;
     }
 
+
     private void swap(int[] nums,int i,int j)
     {
         int temp=nums[j];

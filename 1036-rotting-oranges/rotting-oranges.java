@@ -34,7 +34,7 @@ class Solution {
                     if (i >= 0 && i < m && j >= 0 && j < n && a[i][j] == 1) {
                         a[i][j] = 2;
                         f--;
-                        q.offer(new int[] {i, j});
+                        q.add(new int[] {i, j});
                     }
                 }
             }

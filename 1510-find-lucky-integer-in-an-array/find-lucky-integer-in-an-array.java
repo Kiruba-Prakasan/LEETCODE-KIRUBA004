@@ -1,7 +1,7 @@
 class Solution {
     public int findLucky(int[] arr) {
        int c=0;
-       Arrays.sort(arr);
+       //Arrays.sort(arr);
        HashMap<Integer,Integer> map = new HashMap<>();
        for(int num : arr){
         map.put(num,map.getOrDefault(num,0)+1);

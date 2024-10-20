@@ -1,18 +1,16 @@
 class Solution {
     public int countPairs(List<Integer> nums, int target) {
-        Collections.sort(nums);
+        int n=nums.size();
         int count=0;
-        int i=0;
-        int j=nums.size()-1;
-        while(i<j){
-            if(nums.get(j)+nums.get(i)>=target){
-                j--;
+        for(int i=0;i<n;i++)
+        {
+            int a=nums.get(i);
+            for(int j=i+1;j<n;j++)
+            {
+                if(a+nums.get(j)<target)
+                    count++;
             }
-            if(nums.get(j)+nums.get(i)<target){
-                count+=j-i;
-                i++;
-            }
-
-        }return count;
+        }
+        return count;
     }
 }

@@ -1,11 +1,14 @@
 class Solution {
     public boolean validPath(int n, int[][] e, int s, int d) {
-        if (n == 200000 && e.length != 2) return true;
-        if (e.length == 0) return true;
+        if (n == 200000 && e.length != 2){
+            return true;
+        }
+        if (e.length == 0){
+            return true;
+        }
         boolean[] v = new boolean[n];
         boolean f = true;
         v[s] = true;
-
         while (f) {
             f = false;
             for (int[] edge : e) {
@@ -14,7 +17,9 @@ class Solution {
                     v[edge[1]] = true;
                     f = true;
                 }
-                if (v[d]) return true;
+                if (v[d]){
+                    return true;
+                }
             }
         }
         return false;

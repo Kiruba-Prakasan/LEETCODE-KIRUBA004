@@ -12,7 +12,7 @@ class Solution {
         int m = grid.length;
         int n = grid[0].length;
         boolean[][] vis = new boolean[m][n];
-
+        //rows
         for(int i=0;i<n;i++){
             if(grid[0][i]==1){
                 q.add(new Pair(0,i));
@@ -23,7 +23,7 @@ class Solution {
                 vis[m-1][i]=true;
             }
         }
-
+        //cols
         for(int i=0;i<m;i++){
             if(grid[i][0]==1 && !vis[i][0]){
                 q.add(new Pair(i,0));
@@ -34,7 +34,7 @@ class Solution {
                 vis[i][n-1]=true;
             }
         }
-
+        //BFS
         int[] drow = {-1,0,1,0};
         int[] dcol = {0,1,0,-1};
         while(!q.isEmpty()){
@@ -50,6 +50,7 @@ class Solution {
                 }
             }
         }
+        //To find Enclave
         int ans = 0;
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){

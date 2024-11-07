@@ -1,5 +1,6 @@
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
+        //Bellman Ford Algorithm
         int[] dist = new int[n+1];
         Arrays.fill(dist,Integer.MAX_VALUE);
         int e = times.length;

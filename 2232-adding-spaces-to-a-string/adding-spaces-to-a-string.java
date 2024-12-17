@@ -9,7 +9,6 @@ class Solution {
         }
         sb.append(" ");
         sb.append(s.substring(spaces[i-1])); 
-
         return sb.toString();
     }
 }

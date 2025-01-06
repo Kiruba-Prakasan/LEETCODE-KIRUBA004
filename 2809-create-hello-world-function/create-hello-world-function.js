@@ -2,9 +2,9 @@
  * @return {Function}
  */
 var createHelloWorld = function() {
-    
+    const msg = "Hello World";
     return function(...args) {
-        return "Hello World";
+        return msg;
     }
 };
 

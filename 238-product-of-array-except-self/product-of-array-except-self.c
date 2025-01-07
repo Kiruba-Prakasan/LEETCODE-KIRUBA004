@@ -1,6 +1,3 @@
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
 int* productExceptSelf(int* nums, int n, int* returnSize) {
     *returnSize = n;
     int * res = (int*)malloc(n*sizeof(int));

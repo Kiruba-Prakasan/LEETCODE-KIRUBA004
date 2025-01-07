@@ -1,39 +1,39 @@
-void heapify(int* heap, int n, int i) {
-    int smallest = i;
-    int left = 2 * i + 1;
-    int right = 2 * i + 2;
+void heapify(int* h, int n, int i) {
+    int sm = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
 
-    if (left < n && heap[left] < heap[smallest])
-        smallest = left;
-    if (right < n && heap[right] < heap[smallest])
-        smallest = right;
+    if (l < n && h[l] < h[sm])
+        sm = l;
+    if (r < n && h[r] < h[sm])
+        sm = r;
 
-    if (smallest != i) {
-        int temp = heap[i];
-        heap[i] = heap[smallest];
-        heap[smallest] = temp;
-        heapify(heap, n, smallest);
+    if (sm != i) {
+        int t = h[i];
+        h[i] = h[sm];
+        h[sm] = t;
+        heapify(h, n, sm);
     }
 }
 
-int findKthLargest(int* nums, int n, int k) {
-    int* heap = (int*)malloc(k * sizeof(int));
+int findKthLargest(int* a, int n, int k) {
+    int* h = (int*)malloc(k * sizeof(int));
     for (int i = 0; i < k; i++) {
-        heap[i] = nums[i];
+        h[i] = a[i];
     }
 
     for (int i = k / 2 - 1; i >= 0; i--) {
-        heapify(heap, k, i);
+        heapify(h, k, i);
     }
 
     for (int i = k; i < n; i++) {
-        if (nums[i] > heap[0]) {
-            heap[0] = nums[i];
-            heapify(heap, k, 0);
+        if (a[i] > h[0]) {
+            h[0] = a[i];
+            heapify(h, k, 0);
         }
     }
 
-    int result = heap[0];
-    free(heap);
-    return result;
+    int r = h[0];
+    free(h);
+    return r;
 }

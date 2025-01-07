@@ -3,7 +3,6 @@ int compare(const void *a, const void *b) {
 }
 
 int** threeSum(int* nums, int n, int* returnSize, int** returnColumnSizes) {
-    // Start with reasonable size and reallocate if needed
     int capacity = 10000;
     int **res = (int **)malloc(sizeof(int *) * capacity);
     *returnColumnSizes = (int *)malloc(sizeof(int) * capacity);
@@ -25,7 +24,6 @@ int** threeSum(int* nums, int n, int* returnSize, int** returnColumnSizes) {
             } else if(sum > 0) {
                 k--;
             } else {
-                // Reallocate if needed
                 if(*returnSize >= capacity) {
                     capacity *= 2;
                     res = (int **)realloc(res, sizeof(int *) * capacity);

@@ -21,7 +21,6 @@ int findKthLargest(int* a, int n, int k) {
     for (int i = 0; i < k; i++) {
         h[i] = a[i];
     }
-
     for (int i = k / 2 - 1; i >= 0; i--) {
         heapify(h, k, i);
     }

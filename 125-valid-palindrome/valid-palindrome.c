@@ -1,4 +1,6 @@
 bool isPalindrome(char* s) {
+    /*
+    without lib func
     int k=0;
     for(int i=0;i<strlen(s);i++){
         if((s[i]>='A' && s[i]<='Z') || (s[i]>='a' && s[i]<='z') || (s[i]>='0' && s[i]<='9')){
@@ -18,6 +20,21 @@ bool isPalindrome(char* s) {
             c2 = c2+32;
         }
         if(c1!=c2){
+            return false;
+        }
+        i++;
+        j--;
+    }
+    */
+    int i=0,j=strlen(s);
+    while(i<j){
+        while(i<j && !isalnum(s[i])){
+            i++;
+        }
+        while(i<j && !isalnum(s[j])){
+            j--;
+        }
+        if(tolower(s[i])!=tolower(s[j])){
             return false;
         }
         i++;

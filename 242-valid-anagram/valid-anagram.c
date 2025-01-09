@@ -4,8 +4,8 @@ bool isAnagram(char* s, char* t) {
     }
     int f[26]={0};
     for(int i=0;i<strlen(s);i++){
-        f[s[i]-'a']++;
-        f[t[i]-'a']--;
+        f[*(s+i)-'a']++;
+        f[*(t+i)-'a']--;
     }
     for(int i=0;i<26;i++){
         if(f[i]!=0){

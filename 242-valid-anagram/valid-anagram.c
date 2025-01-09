@@ -2,14 +2,13 @@ bool isAnagram(char* s, char* t) {
     if(strlen(s)!=strlen(t)){
         return false;
     }
-    int sf[26]={0};
-    int tf[26]={0};
+    int f[26]={0};
     for(int i=0;i<strlen(s);i++){
-        sf[s[i]-'a']++;
-        tf[t[i]-'a']++;
+        f[s[i]-'a']++;
+        f[t[i]-'a']--;
     }
     for(int i=0;i<26;i++){
-        if(sf[i]!=tf[i]){
+        if(f[i]!=0){
             return false;
         }
     }

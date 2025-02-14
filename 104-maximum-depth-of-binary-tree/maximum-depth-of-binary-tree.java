@@ -1,5 +1,6 @@
 class Solution {
     public int maxDepth(TreeNode root) {
+        /* ITERATIVE APPROACH
         if(root==null){
             return 0;
         }
@@ -20,5 +21,10 @@ class Solution {
             }
         }
         return depth;
+        */
+        if(root==null){
+            return 0;
+        }
+        return Math.max(maxDepth(root.left),maxDepth(root.right))+1;
     }
 }
